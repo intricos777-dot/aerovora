@@ -249,7 +249,7 @@
     <a href="#engine">Engine</a>
     <a href="#specs">Specs</a>
     <a href="#accessories">Accessories</a>
-    <a href="http://sin-asustufdashf15fx517zcfx517zc:8777" target="_blank">Ops</a>
+    <a href="http://localhost:8777" target="_blank">Ops</a>
     <a href="#" onclick="document.getElementById('orderModal').classList.add('active')">Contact</a>
   </div>
 </nav>
@@ -724,7 +724,7 @@ async function trackOrder() {
 
   try {
     // Try the local API first, then fall back to order number display
-    const resp = await fetch('http://sin-asustufdashf15fx517zcfx517zc:8777/api/orders');
+    const resp = await fetch('http://localhost:8777/api/orders');
     const orders = await resp.json();
     const order = orders.find(o => o.order_number === orderNum);
 
@@ -741,7 +741,7 @@ async function trackOrder() {
           <div>Tracking: ${order.tracking || 'Not yet shipped'}</div>
         </div>
         <div style="margin-top:1rem;font-size:0.8rem;color:var(--text-dim)">
-          <a href="http://sin-asustufdashf15fx517zcfx517zc:8777" target="_blank" style="color:var(--accent)">View full production status →</a>
+          <a href="http://localhost:8777" target="_blank" style="color:var(--accent)">View full production status →</a>
         </div>
       `;
     } else {
